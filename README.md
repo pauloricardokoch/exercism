@@ -1,3 +1,3 @@
-My solutions from [Exercism].
+Solutions for [Exercism].
 
 [Exercism]: https://exercism.org
