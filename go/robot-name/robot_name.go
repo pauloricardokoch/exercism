@@ -44,8 +44,7 @@ func (r *Robot) Name() (string, error) {
 
 func (r *Robot) Reset() {
 	r.name = ""
-	_, err := r.Name()
-	if err != nil {
+	if _, err := r.Name(); err != nil {
 		panic(err.Error())
 	}
 }
