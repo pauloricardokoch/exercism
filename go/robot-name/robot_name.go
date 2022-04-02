@@ -18,22 +18,18 @@ func init() {
 	rand.Seed(time.Now().UnixNano())
 }
 
-// genLetter returns a random letter from A-Z
-func genLetter() string {
-	return string(rune(65 + rand.Intn(90-65+1)))
-}
-
-// genNum returns a random number from 0-9
-func genNum() string {
-	return string(rune(48 + rand.Intn(57-48+1)))
-}
-
 func (r *Robot) Name() (string, error) {
 	if r.name != "" {
 		return r.name, nil
 	}
 
-	name := genLetter() + genLetter() + genNum() + genNum() + genNum()
+	name := fmt.Sprintf(
+		"%c%c%03d",
+		rand.Intn(26)+'A',
+		rand.Intn(26)+'A',
+		rand.Intn(1000),
+	)
+
 	if _, ok := robots[name]; ok {
 		if len(robots) < uniqueNames {
 			return r.Name()
