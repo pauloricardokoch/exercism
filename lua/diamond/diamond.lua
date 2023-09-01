@@ -6,15 +6,15 @@ diamond.setDiff = function(letter)
 end
 
 diamond.line = function(i)
-    local pad, fill, out, temp = '', '', '', ''
-    temp = string.char(diamond.aByte + i)
+    local pad, fill, out, letter = '', '', '', ''
+    letter = string.char(diamond.aByte + i)
     pad = string.rep(' ', diamond.diff - i)
     fill = string.rep(' ', i + (i - 1))
 
     if i == 0 then
-        return out .. pad .. temp .. pad .. '\n'
+        return out .. pad .. letter .. pad .. '\n'
     end
-    return out .. pad .. temp .. fill .. temp .. pad .. '\n'
+    return out .. pad .. letter .. fill .. letter .. pad .. '\n'
 end
 
 diamond.draw = function(letter)
