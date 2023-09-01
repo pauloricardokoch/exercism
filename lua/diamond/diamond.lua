@@ -7,17 +7,14 @@ end
 
 diamond.line = function(i)
     local pad, fill, out, temp = '', '', '', ''
-
     temp = string.char(diamond.aByte + i)
     pad = string.rep(' ', diamond.diff - i)
     fill = string.rep(' ', i + (i - 1))
 
     if i == 0 then
-        out = out .. pad .. temp .. pad
-    else
-        out = out .. pad .. temp .. fill .. temp .. pad
+        return out .. pad .. temp .. pad .. '\n'
     end
-    return out .. '\n'
+    return out .. pad .. temp .. fill .. temp .. pad .. '\n'
 end
 
 diamond.draw = function(letter)
